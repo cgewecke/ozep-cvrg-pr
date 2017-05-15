@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/MultisigWallet.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> MultisigWallet.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.83% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>11/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">33.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>4/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.31% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>11/26</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.4.8;
+&nbsp;
+&nbsp;
+import "./ownership/Multisig.sol";
+import "./ownership/Shareable.sol";
+import "./DayLimit.sol";
+&nbsp;
+&nbsp;
+/*
+ * MultisigWallet
+ * usage:
+ * bytes32 h = Wallet(w).from(oneOwner).execute(to, value, data);
+ * Wallet(w).from(anotherOwner).confirm(h);
+ */
+contract MultisigWallet is Multisig, Shareable, DayLimit {
+&nbsp;
+  struct Transaction {
+    address to;
+    uint value;
+    bytes data;
+  }
+&nbsp;
+  function MultisigWallet(address[] _owners, uint _required, uint _daylimit)       
+    Shareable(_owners, _required)        
+    DayLimit(_daylimit) { }
+&nbsp;
+  // destroys the contract sending everything to `_to`.
+  function destroy(address _to) onlymanyowners(keccak256(msg.data)) external {
+    selfdestruct(_to);
+  }
+&nbsp;
+  // gets called when no other function matches
+<span class="fstat-no" title="function not covered" >  function() payable {</span>
+    // just being sent some cash?
+<span class="cstat-no" title="statement not covered" >    if (msg.value &gt; 0)</span>
+<span class="cstat-no" title="statement not covered" >      Deposit(msg.sender, msg.value)</span>;
+  }
+&nbsp;
+  // Outside-visible transact entry point. Executes transaction immediately if below daily spend limit.
+  // If not, goes into multisig process. We provide a hash on return to allow the sender to provide
+  // shortcuts for the other confirmations (allowing them to avoid replicating the _to, _value
+  // and _data arguments). They still get the option of using them if they want, anyways.
+  function execute(address _to, uint _value, bytes _data) external onlyOwner returns (bytes32 _r) {
+    // first, take the opportunity to check that we're under the daily limit.
+    if (underLimit(_value)) {
+      SingleTransact(msg.sender, _value, _to, _data);
+      // yes - just execute the call.
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (!_to.call.value(_value)(_data)) {
+<span class="cstat-no" title="statement not covered" >        throw;</span>
+      }
+      return 0;
+    }
+    // determine our operation hash.
+    _r = keccak256(msg.data, block.number);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!confirm(_r) &amp;&amp; txs[_r].to == 0) {
+      txs[_r].to = _to;
+      txs[_r].value = _value;
+      txs[_r].data = _data;
+      ConfirmationNeeded(_r, msg.sender, _value, _to, _data);
+    }
+  }
+&nbsp;
+  // confirm a transaction through just the hash. we use the previous transactions map, txs, in order
+  // to determine the body of the transaction from the hash provided.
+<span class="fstat-no" title="function not covered" >  function confirm(bytes32 _h) onlymanyowners(_h) returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >    if (txs[_h].to != 0) {</span>
+<span class="cstat-no" title="statement not covered" >      if (!txs[_h].to.call.value(txs[_h].value)(txs[_h].data)) {</span>
+<span class="cstat-no" title="statement not covered" >        throw;</span>
+      }
+<span class="cstat-no" title="statement not covered" >      MultiTransact(msg.sender, _h, txs[_h].value, txs[_h].to, txs[_h].data)</span>;
+      delete txs[_h];
+<span class="cstat-no" title="statement not covered" >      return true;</span>
+    }
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function setDailyLimit(uint _newLimit) onlymanyowners(keccak256(msg.data)) external {</span>
+<span class="cstat-no" title="statement not covered" >    _setDailyLimit(_newLimit)</span>;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function resetSpentToday() onlymanyowners(keccak256(msg.data)) external {</span>
+<span class="cstat-no" title="statement not covered" >    _resetSpentToday()</span>;
+  }
+&nbsp;
+&nbsp;
+  // INTERNAL METHODS
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function clearPending() internal {</span>
+<span class="cstat-no" title="statement not covered" >    uint length = pendingsIndex.length</span>;
+<span class="cstat-no" title="statement not covered" >    for (uint i = 0; i &lt; length; ++i) {</span>
+      delete txs[pendingsIndex[i]];
+    }
+    super.clearPending();
+  }
+&nbsp;
+&nbsp;
+  // FIELDS
+&nbsp;
+  // pending transactions we have at present.
+  mapping (bytes32 =&gt; Transaction) txs;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 15 2017 08:34:43 GMT-0700 (PDT)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
